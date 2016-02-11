@@ -9,7 +9,8 @@ var bio={"name": "Guillaume Simler",
 			"email": "guillaume.simler@gmail.com", 
 			"LinkedIn": "https://de.linkedin.com/in/guillaume-simler-1391939",
 			"Xing": "https://www.xing.com/profile/Guillaume_Simler",
-			"Github":"https://github.com/guillaumesimler"}
+			"Github":"https://github.com/guillaumesimler",
+			"blog":"http://www.simler.eu/"}
 		};
 
 var projects={
@@ -128,19 +129,49 @@ var education={
 
 
 //Website building
+	//Add bio details
 
+		// "Main function"
 
-if(bio.skills.length >0) {
-	$("#header").append(HTMLskillsStart);
+bio.display = function() {
+	//	Add Name & Roole
 
-	for (skill in bio.skills) {
-		var formatedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-		$("#skills").append(formatedSkill);	
-		};
+	var formatedheaderName = HTMLheaderName.replace("%data%", bio.name);
+	var formatedheaderRole = HTMLheaderRole.replace("%data%", bio.role);
+
+	$("#header").prepend(formatedheaderRole);
+	$("#header").prepend(formatedheaderName);
+	
+
+	// Add contacts
+	var formatedmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	var formatedemail = HTMLemail.replace("%data%", bio.contacts.email);
+	var formatedLinkedin = HTMLLinkedIn.replace("%data%", bio.contacts.LinkedIn);
+	var formatedXing = HTMLXing.replace("%data%", bio.contacts.Xing);
+	var formatedGithub = HTMLgithub.replace("%data%", bio.contacts.Github);
+	var formatedblog = HTMLblog.replace("%data%", bio.contacts.blog);
+
+	$("#topContacts").append(formatedmobile);
+	$("#topContacts").append(formatedemail);
+	$("#topContacts").append(formatedLinkedin);
+	$("#topContacts").append(formatedXing);
+	$("#topContacts").append(formatedGithub);
+	$("#topContacts").append(formatedblog);
+
+	// Add Skills
+
+	if(bio.skills.length >0) {
+		$("#header").append(HTMLskillsStart);
+
+		for (skill in bio.skills) {
+			var formatedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+			$("#skills").append(formatedSkill);	
+			};
+	};
 };
-
 	//Add Work section
 
+		// "Subfunction"
 work.Location = function() {
 	var InputLocation = "";
 			
@@ -156,6 +187,7 @@ work.Location = function() {
 	$(".work-entry:last").append(formatedworkLocation);
 };
 
+		// "Main function"
 work.display = function() {
 	if (work.jobs.length >0) {
 			
@@ -204,7 +236,7 @@ projects.display = function() {
 
 work.display();
 projects.display();
-
+bio.display();
 
 	//Collecting click locations
 
