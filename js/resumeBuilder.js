@@ -1,4 +1,4 @@
-
+// Data input
 var bio={"name": "Guillaume Simler", 
 		"role": "Web Student", 
 		"picture_URL": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/0ad/352/006b11c.jpg", 
@@ -139,9 +139,9 @@ if(bio.skills.length >0) {
 		};
 };
 
-	// Work: actually the IF statement is just a securtiy
+	//Add Work section
 
-work.LocationS = function() {
+work.Location = function() {
 	var InputLocation = "";
 			
 	for (place in work.jobs[job].location){
@@ -174,7 +174,7 @@ work.display = function() {
 
 			//Location is more fun: a second loop is needed in my case
 			
-			WorkLocation();
+			work.Location();
 
 			//Description
 			var formatedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
@@ -183,7 +183,28 @@ work.display = function() {
 	};
 };
 
+	//Add Project section
+
+projects.display = function() {
+	for (proj in projects.project) {
+		$("#projects").append(HTMLprojectStart);
+
+		var formatedprojectTitle = HTMLprojectTitle.replace("%data%", projects.project[proj].title);
+		$(".project-entry:last").append(formatedprojectTitle);
+
+		var formatedprojectDates = HTMLprojectDates.replace("%data%", projects.project[proj].dates);
+		$(".project-entry:last").append(formatedprojectDates);
+
+		var formatedprojectDescription = HTMLprojectDescription.replace("%data%",projects.project[proj].description);
+		$(".project-entry:last").append(formatedprojectDescription);
+	};
+};
+
+	// Build the website
+
 work.display();
+projects.display();
+
 
 	//Collecting click locations
 
@@ -206,23 +227,3 @@ function inName(inputName) {
 
 $("#main").append(internationalizeButton);
 
-	// Add Project section (encapsulating)
-
-projects.display = function() {
-	for (proj in projects.project) {
-		$("#projects").append(HTMLprojectStart);
-
-		var formatedprojectTitle = HTMLprojectTitle.replace("%data%", projects.project[proj].title);
-		$(".project-entry:last").append(formatedprojectTitle);
-
-		var formatedprojectDates = HTMLprojectDates.replace("%data%", projects.project[proj].dates);
-		$(".project-entry:last").append(formatedprojectDates);
-
-		var formatedprojectDescription = HTMLprojectDescription.replace("%data%",projects.project[proj].description);
-		$(".project-entry:last").append(formatedprojectDescription);
-
-	};
-
-};
-
-projects.display();
