@@ -56,7 +56,7 @@ var work ={
 			"Barcelona, Spain", 
 			"Stockholm, Sweden", 
 			"Torino, Italy",
-			"Kidderminster, United Kingdom" 
+			"Kidderminster, United Kingdom", 
 			"Graz, Austria"],
 		"dates" : "02/2008-12/2011",
 		"description": "responsible for daily financial operations of AVL France and its restruturing as well as a coordinating function of the financial operations of the European subsidies"
@@ -126,3 +126,17 @@ var education={
 	]
 };
 
+
+
+
+if(bio.skills.length >0) {
+	$("#header").append(HTMLskillsStart);
+
+	for (skill in bio.skills) {
+		var formatedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+		$("#skills").append(formatedSkill);	
+		};
+	};
+
+	
+	
