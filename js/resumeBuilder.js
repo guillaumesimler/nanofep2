@@ -14,7 +14,7 @@ var bio={"name": "Guillaume Simler",
 
 var projects={
 	"project":[
-		{"tile": "About Me",
+		{"title": "About Me",
 		"dates": "01/2016",
 		"description": "a first intro in HTML and CSS",
 		"images":[
@@ -22,7 +22,7 @@ var projects={
 			"http://www.simler.eu/images/guillaume_project1-400_1x.jpg"]
 		},
 
-		{"tile": "Portfolio",
+		{"title": "Portfolio",
 		"dates": "02/2016",
 		"description": "a deep dive into responsive webdesign",
 		"images":[
@@ -141,7 +141,22 @@ if(bio.skills.length >0) {
 
 	// Work: actually the IF statement is just a securtiy
 
-function displayWork() {
+work.LocationS = function() {
+	var InputLocation = "";
+			
+	for (place in work.jobs[job].location){
+		InputLocation=	InputLocation + work.jobs[job].location[place] + " - ";
+		};
+	
+	InputLocation = InputLocation.slice(0, -3); 
+
+	var formatedworkLocation = HTMLworkLocation.replace("%data%",InputLocation);
+		
+
+	$(".work-entry:last").append(formatedworkLocation);
+};
+
+work.display = function() {
 	if (work.jobs.length >0) {
 			
 		for (job in work.jobs) {
@@ -158,19 +173,8 @@ function displayWork() {
 			$(".work-entry:last").append(formatedworkDates);
 
 			//Location is more fun: a second loop is needed in my case
-			var InputLocation = "";
 			
-			for (place in work.jobs[job].location){
-				InputLocation=	InputLocation + work.jobs[job].location[place] + " - ";
-				};
-			
-			InputLocation = InputLocation.slice(0, -3); 
-
-			var formatedworkLocation = HTMLworkLocation.replace("%data%",InputLocation);
-				
-
-			$(".work-entry:last").append(formatedworkLocation);
-
+			WorkLocation();
 
 			//Description
 			var formatedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
@@ -179,7 +183,7 @@ function displayWork() {
 	};
 };
 
-displayWork();
+work.display();
 
 	//Collecting click locations
 
@@ -202,4 +206,23 @@ function inName(inputName) {
 
 $("#main").append(internationalizeButton);
 
-	// 
+	// Add Project section (encapsulating)
+
+projects.display = function() {
+	for (proj in projects.project) {
+		$("#projects").append(HTMLprojectStart);
+
+		var formatedprojectTitle = HTMLprojectTitle.replace("%data%", projects.project[proj].title);
+		$(".project-entry:last").append(formatedprojectTitle);
+
+		var formatedprojectDates = HTMLprojectDates.replace("%data%", projects.project[proj].dates);
+		$(".project-entry:last").append(formatedprojectDates);
+
+		var formatedprojectDescription = HTMLprojectDescription.replace("%data%",projects.project[proj].description);
+		$(".project-entry:last").append(formatedprojectDescription);
+
+	};
+
+};
+
+projects.display();
