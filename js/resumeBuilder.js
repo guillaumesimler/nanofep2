@@ -127,6 +127,7 @@ var education={
 };
 
 
+//Website building
 
 
 if(bio.skills.length >0) {
@@ -136,7 +137,69 @@ if(bio.skills.length >0) {
 		var formatedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
 		$("#skills").append(formatedSkill);	
 		};
-	};
+};
 
-	
-	
+	// Work: actually the IF statement is just a securtiy
+
+function displayWork() {
+	if (work.jobs.length >0) {
+			
+		for (job in work.jobs) {
+			$("#workExperience").append(HTMLworkStart);
+			
+			//formated Employer and Title
+			var formatedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+			var formatedtworkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			var formatedInput = formatedworkEmployer + formatedtworkTitle;
+			$(".work-entry:last").append(formatedInput);
+
+			// Dates are quite easy
+			var formatedworkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+			$(".work-entry:last").append(formatedworkDates);
+
+			//Location is more fun: a second loop is needed in my case
+			var InputLocation = "";
+			
+			for (place in work.jobs[job].location){
+				InputLocation=	InputLocation + work.jobs[job].location[place] + " - ";
+				};
+			
+			InputLocation = InputLocation.slice(0, -3); 
+
+			var formatedworkLocation = HTMLworkLocation.replace("%data%",InputLocation);
+				
+
+			$(".work-entry:last").append(formatedworkLocation);
+
+
+			//Description
+			var formatedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+			$(".work-entry:last").append(formatedworkDescription);
+		};
+	};
+};
+
+displayWork();
+
+	//Collecting click locations
+
+$(document).click(function(loc) {
+ 	var x = loc.pageX;
+	var y = loc.pageY;
+
+	logClicks(x,y);
+ });
+
+	//Internationalize
+
+
+function inName(inputName) {
+	var n = inputName.indexOF(" ");
+	var newName = inputName.slice(0.1).toUpperCase + inputName.slice(1,n-1).toLowerCAse + inputName.slice(n).toUpperCase;
+
+	return newName;
+};
+
+$("#main").append(internationalizeButton);
+
+	// 
