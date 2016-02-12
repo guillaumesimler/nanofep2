@@ -11,7 +11,8 @@ var bio={"name": "Guillaume Simler",
 		"Xing": "https://www.xing.com/profile/Guillaume_Simler",
 		"Github":"https://github.com/guillaumesimler",
 		"blog":"http://www.simler.eu"},
-	"bioPic": "bio_pic-2-150_1x.jpg"
+	"bioPic": "bio_pic-2-150_1x.jpg",
+	"location": "Nürtingen, Germany"
 };
 
 var projects={
@@ -54,7 +55,7 @@ var work ={
 			"Croissy-sur-Seine, France", 
 			"Barcelona, Spain", 
 			"Stockholm, Sweden", 
-			"Torino, Italy",
+			"Turin, Italy",
 			"Kidderminster, United Kingdom", 
 			"Graz, Austria"],
 		"dates" : "02/2008-12/2011",
@@ -299,15 +300,19 @@ work.display();
 projects.display();
 bio.display();
 
+	// Load the map
+
+$("#mapDiv").append(googleMap);
+
 
 	//Collecting click locations
 
-$(document).click(function(loc) {
- 	var x = loc.pageX;
-	var y = loc.pageY;
+// $(document).click(function(loc) {
+//  	var x = loc.pageX;
+// 	var y = loc.pageY;
 
-	logClicks(x,y);
- });
+// 	logClicks(x,y);
+//  });
 
 	//Internationalize
 
