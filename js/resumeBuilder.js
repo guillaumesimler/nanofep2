@@ -10,7 +10,7 @@ var bio={"name": "Guillaume Simler",
 		"LinkedIn": "https://de.linkedin.com/in/guillaume-simler-1391939",
 		"Xing": "https://www.xing.com/profile/Guillaume_Simler",
 		"Github":"https://github.com/guillaumesimler",
-		"blog":"http://www.simler.eu/"},
+		"blog":"http://www.simler.eu"},
 	"bioPic": "bio_pic-2-150_1x.jpg"
 };
 
