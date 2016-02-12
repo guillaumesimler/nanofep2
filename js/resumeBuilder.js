@@ -85,23 +85,23 @@ var work ={
 var education={
 	"schools": [
 	{"name": "Audencia",
-	"graduation": 2007,
-	"city": "Nantes, France",
-	"degree": "Master in Science",
-	"majors": ["controlling", "marketing", "entrepreneurship"]
+	"dates": "2004-2007",
+	"location": "Nantes, France",
+	"degree": "Master",
+	"majors": ["Business Administration"]
 
 	},
 	{"name": "WHU",
-	"graduation": 2007,
-	"city": "Vallendar, Germany",
+	"dates": "2006-2007",
+	"location": "Vallendar, Germany",
 	"degree": "exchange year",
-	"majors": ["controlling", "marketing", "entrepreneurship"]
+	"majors": ["Controlling", "Marketing", "Entrepreneurship"]
 	},
 
 	{"name": "Lycée du Parc",
-	"graduation": 2003,
-	"city": "Lyon, France",
-	"degree": "exchange year",
+	"dates": "2001-2003",
+	"location": "Lyon, France",
+	"degree": "classe préparatoire",
 	"majors": ["math", "History", "philosophy"],
 	"minors": ["German", "English", "Economics"]}
 	],
@@ -130,9 +130,6 @@ var education={
 
 //Website building
 	//Add bio details
-
-		// "Main function"
-
 bio.display = function() {
 	//	Add Name & Roole
 
@@ -216,7 +213,6 @@ work.display = function() {
 };
 
 	//Add Project section
-
 projects.display = function() {
 	for (proj in projects.project) {
 		$("#projects").append(HTMLprojectStart);
@@ -232,11 +228,67 @@ projects.display = function() {
 	};
 };
 
+	// Add Education
+
+education.display = function () {
+	if (education.schools.length > 0) {
+
+		for (school in education.schools) {
+			$("#education").append(HTMLschoolStart);
+			var simplifiedSchool =  education.schools[school];
+
+			var formatedschoolName = HTMLschoolName.replace("%data%", simplifiedSchool.name);
+			var formatedschoolDegree = HTMLschoolDegree.replace("%data%", simplifiedSchool.degree);
+			var formatedschoolDates = HTMLschoolDates.replace("%data%", simplifiedSchool.dates);
+			var formatedschoolLocation = HTMLschoolLocation.replace("%data%", simplifiedSchool.location);
+
+			var formatedschoolHeader = formatedschoolName + formatedschoolDegree;
+
+			$(".education-entry:last").append(formatedschoolHeader);
+			$(".education-entry:last").append(formatedschoolDates);
+			$(".education-entry:last").append(formatedschoolLocation);
+
+			if (simplifiedSchool.majors.length > 0) {
+				var formatedschoolMajor = ""; 
+
+				for (major in simplifiedSchool.majors) {
+					formatedschoolMajor = formatedschoolMajor +  simplifiedSchool.majors[major] + ", ";
+				};
+
+				formatedschoolMajor = formatedschoolMajor.slice(0,-2);
+				formatedschoolMajor = HTMLschoolMajor.replace("%data%", formatedschoolMajor);
+
+				$(".education-entry:last").append(formatedschoolMajor);
+			};
+		};
+	};
+
+	if (education.OnlineCourses.length > 0) {
+		$(".education-entry:last").append(HTMLonlineClasses);
+
+		for (course in education.OnlineCourses) {
+					
+			var formatedonlineTitle = HTMLonlineTitle.replace("%data%", education.OnlineCourses[course].title);
+			var formatedonlineSchool = HTMLonlineSchool .replace("%data%", education.OnlineCourses[course].school);
+			var formatedonlinelDates = HTMLonlineDates.replace("%data%", education.OnlineCourses[course].dates);
+			var formatedonlineURL = HTMLonlineURL.replace("%data%", education.OnlineCourses[course].courseURL);
+
+			var formatedonlinelHeader = formatedonlineTitle + formatedonlineSchool;
+
+			$(".education-entry:last").append(formatedonlinelHeader);
+			$(".education-entry:last").append(formatedonlinelDates);
+			$(".education-entry:last").append(formatedonlineURL);
+		};
+
+	};
+
+};
 	// Build the website
 
 work.display();
 projects.display();
 bio.display();
+education.display();
 
 	//Collecting click locations
 
@@ -250,12 +302,12 @@ $(document).click(function(loc) {
 	//Internationalize
 
 
-function inName(inputName) {
-	var n = inputName.indexOF(" ");
-	var newName = inputName.slice(0.1).toUpperCase + inputName.slice(1,n-1).toLowerCAse + inputName.slice(n).toUpperCase;
+// function inName(inputName) {
+// 	var n = inputName.indexOF(" ");
+// 	var newName = inputName.slice(0.1).toUpperCase + inputName.slice(1,n-1).toLowerCAse + inputName.slice(n).toUpperCase;
 
-	return newName;
-};
+// 	return newName;
+// };
 
-$("#main").append(internationalizeButton);
+// $("#main").append(internationalizeButton);
 
