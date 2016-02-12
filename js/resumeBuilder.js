@@ -1,34 +1,32 @@
 // Data input
 var bio={"name": "Guillaume Simler", 
-		"role": "Web Student", 
-		"picture_URL": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/0ad/352/006b11c.jpg", 
-		"welcome_message" : "Welcome on my journey from corporate finance to IT",
-		"skills" :["Corporate Finance", "Team Management", "M&A", "Sales", "ERP"],
-		"contacts" :{
-			"mobile": "+49 176 76 24 ----", 
-			"email": "guillaume.simler@gmail.com", 
-			"LinkedIn": "https://de.linkedin.com/in/guillaume-simler-1391939",
-			"Xing": "https://www.xing.com/profile/Guillaume_Simler",
-			"Github":"https://github.com/guillaumesimler",
-			"blog":"http://www.simler.eu/"}
-		};
+	"role": "Web Student", 
+	"picture_URL": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/0ad/352/006b11c.jpg", 
+	"welcome_message" : "Welcome on my journey from corporate finance to IT",
+	"skills" :["Corporate Finance", "Team Management", "M&A", "Sales", "ERP"],
+	"contacts" :{
+		"mobile": "+49 176 76 24 ----", 
+		"email": "guillaume.simler@gmail.com", 
+		"LinkedIn": "https://de.linkedin.com/in/guillaume-simler-1391939",
+		"Xing": "https://www.xing.com/profile/Guillaume_Simler",
+		"Github":"https://github.com/guillaumesimler",
+		"blog":"http://www.simler.eu/"},
+	"bioPic": "bio_pic-2-150_1x.jpg"
+};
 
 var projects={
 	"project":[
 		{"title": "About Me",
 		"dates": "01/2016",
 		"description": "a first intro in HTML and CSS",
-		"images":[
-			"http://www.simler.eu/images/guillaume_project1-600_1x.jpg",
-			"http://www.simler.eu/images/guillaume_project1-400_1x.jpg"]
+		"pic": ["project1-1-150_1x.jpg",
+			"project1-2-150_1x.jpg"]
 		},
 
 		{"title": "Portfolio",
 		"dates": "02/2016",
 		"description": "a deep dive into responsive webdesign",
-		"images":[
-			"http://www.simler.eu/images/guillaume_project2-600_1x.jpg",
-			"http://www.simler.eu/images/guillaume_project2-400_1x.jpg"]
+		"pic": ["project2-1-150_1x.jpg"]
 		}		
 	]
 };
@@ -165,6 +163,11 @@ bio.display = function() {
 			$("#skills").append(formatedSkill);	
 			};
 	};
+
+	//add Biopic
+
+	var formatedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	$("#header").prepend(formatedbioPic);
 };
 	//Add Work section
 
@@ -218,13 +221,20 @@ projects.display = function() {
 		$("#projects").append(HTMLprojectStart);
 
 		var formatedprojectTitle = HTMLprojectTitle.replace("%data%", projects.project[proj].title);
-		$(".project-entry:last").append(formatedprojectTitle);
-
 		var formatedprojectDates = HTMLprojectDates.replace("%data%", projects.project[proj].dates);
-		$(".project-entry:last").append(formatedprojectDates);
-
 		var formatedprojectDescription = HTMLprojectDescription.replace("%data%",projects.project[proj].description);
+		
+		$(".project-entry:last").append(formatedprojectTitle);
+		$(".project-entry:last").append(formatedprojectDates);
 		$(".project-entry:last").append(formatedprojectDescription);
+
+		if (projects.project[proj].pic.length > 0){
+
+			for (image in projects.project[proj].pic){
+				var formatedprojectImage = HTMLprojectImage.replace("%data%", projects.project[proj].pic[image]);
+				$(".project-entry:last").append(formatedprojectImage);
+			};
+		};
 	};
 };
 
@@ -284,11 +294,11 @@ education.display = function () {
 
 };
 	// Build the website
-
+education.display();
 work.display();
 projects.display();
 bio.display();
-education.display();
+
 
 	//Collecting click locations
 
