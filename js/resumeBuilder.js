@@ -101,7 +101,7 @@ var education={
 	"dates": "2001-2003",
 	"location": "Lyon, France",
 	"degree": "classe préparatoire",
-	"majors": ["math", "History", "philosophy"],
+	"majors": ["Math", "History", "Philosophy"],
 	"minors": ["German", "English", "Economics"]}
 	],
 
@@ -282,7 +282,7 @@ education.display = function () {
 			var formatedonlineTitle = HTMLonlineTitle.replace("%data%", education.OnlineCourses[course].title);
 			var formatedonlineSchool = HTMLonlineSchool .replace("%data%", education.OnlineCourses[course].school);
 			var formatedonlinelDates = HTMLonlineDates.replace("%data%", education.OnlineCourses[course].dates);
-			var formatedonlineURL = HTMLonlineURL.replace("%data%", education.OnlineCourses[course].courseURL);
+			var formatedonlineURL = HTMLonlineURL.replace(/%data%/g, education.OnlineCourses[course].courseUrl);
 
 			var formatedonlinelHeader = formatedonlineTitle + formatedonlineSchool;
 
