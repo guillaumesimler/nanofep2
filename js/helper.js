@@ -16,13 +16,13 @@ var HTMLheaderRole = '<span class="white-text">%data%</span><hr>';
 var HTMLcontactGeneric = '<li>%contact%<span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="col-xs-6">mobile :<span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="col-xs-6">email :<span class="white-text">%data%</span></li>';
-var HTMLLinkedIn = '<li class="col-xs-2"><a href=%data%>LinkedIn</a></li>';
-var HTMLXing = '<li class="col-xs-2"><a href=%data%>Xing</a></li>';
-var HTMLgithub = '<li class="col-xs-2"><a href=%data%>Github</a></li>';
-var HTMLblog = '<li class="col-xs-2"><a href=%data%>Blog</a></li>';
+var HTMLLinkedIn = '<li class="col-xs-2"><a href=%data% target="_blank">LinkedIn</a></li>';
+var HTMLXing = '<li class="col-xs-2"><a href=%data% target="_blank">Xing</a></li>';
+var HTMLgithub = '<li class="col-xs-2"><a href=%data% target="_blank">Github</a></li>';
+var HTMLblog = '<li class="col-xs-2"><a href=%data% target="_blank">Blog</a></li>';
 var HTMLlocation = '<li>location<span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<picture class="img-responsive"><source media="(min-width:600px)" srcset="images/resume-images/%data%-300_1x.jpg 1x, images/resume-images/%data%-300_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/resume-images/%data%-150_1x.jpg 1x, images/resume-images/%data%-150_2x.jpg 2x"> <img src="images/images/%data%"-150_1x.jpg class="biopic"></picture>';
+var HTMLbioPic = '<picture><source media="(min-width:600px)" srcset="images/resume-images/%data%-300_1x.jpg 1x, images/resume-images/%data%-300_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/resume-images/%data%-150_1x.jpg 1x, images/resume-images/%data%-150_2x.jpg 2x"><img src="images/images/%data%-150_1x.jpg" alt="biographical picture" class="img-responsive"></picture>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3> <span id="skills"><span>';
@@ -39,7 +39,7 @@ var HTMLprojectStart = '<div class="project-entry row"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<picture class="img-responsive col-xs-6 col-md-4"><source media="(min-width:600px)" srcset="images/resume-images/%data%-150_1x.jpg 1x, images/resume-images/%data%-150_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/resume-images/%data%-75_1x.jpg 1x, images/resume-images/%data%-75_2x.jpg 2x"> <img src="images/resume-images/%data%"-75_1x.jpg></picture>';
+var HTMLprojectImage = '<picture class="col-xs-4"><source media="(min-width:600px)" srcset="images/resume-images/%data%-150_1x.jpg 1x, images/resume-images/%data%-150_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/resume-images/%data%-75_1x.jpg 1x, images/resume-images/%data%-75_2x.jpg 2x"><img src="images/resume-images/%data%-75_1x.jpg" alt="picture(s) from project" class="img-responsive"></picture>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
