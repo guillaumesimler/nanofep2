@@ -1,0 +1,92 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+* {
+	font-family: 'Righteous', cursive;
+}
+
+hr {
+	margin: 10px 0;
+	}
+
+h1 {
+	font-size: 36px;
+	color: #92bb4e;
+}
+
+h2 {
+	font-size: 32px;
+	color: #868383;
+}
+
+h3 {
+	font-size: 24px;
+	color: #663817;
+}
+
+img, 
+object, 
+video {
+	max-width: 100%;
+}
+
+/* Additional CSS*/
+
+.touch-size {
+	min-width: 48px;
+	min-height: 48px;
+}
+
+.logo {
+	padding: 10px 0 0 0;
+}
+
+.logo-header {
+	color: #92bb4e;
+	font-size: 200%;
+	font-weight: bold;
+}
+
+
+.logo-caption {
+	color: #663817;
+	font-size: 120%;
+}
+
+
+.go-right {
+	padding-right: 40px;
+}
+	/*otherwise crushed by the footer, which needs to be seen if the website is online, as it is (i)
+	hosted in Germany and (ii) I am German resident - German law enforced by trolling lawyers */
+.min-distance{
+	margin-bottom: 100px;
+}
+
+	/*adapated to Navbar breakpoint*/
+
+/* Bootstrap breaking point xsmall - small  */
+@media screen and (max-width: 768px) {
+	h1, 
+	h2, 
+	h3,
+	.logo-caption,
+	.logo-header {
+		font-size: 100%;
+	}
+}
+
+/* Bootstrap breaking point small - medium  */
+
+
+/* Bootstrap breaking point large */
+@media screen and (max-width: 1200px) {
+	.logo {
+		max-height: 200px;
+		max-width: 200px;
+	}
+}

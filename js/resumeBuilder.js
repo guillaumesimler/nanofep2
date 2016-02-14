@@ -135,8 +135,8 @@ bio.display = function() {
 	var formatedheaderName = HTMLheaderName.replace("%data%", bio.name);
 	var formatedheaderRole = HTMLheaderRole.replace("%data%", bio.role);
 
-	$("#header").prepend(formatedheaderRole);
-	$("#header").prepend(formatedheaderName);
+	$("#header-text").prepend(formatedheaderRole);
+	$("#header-text").prepend(formatedheaderName);
 	
 
 	// Add contacts
@@ -149,15 +149,15 @@ bio.display = function() {
 
 	$("#topContacts").append(formatedmobile);
 	$("#topContacts").append(formatedemail);
-	$("#topContacts").append(formatedLinkedin);
-	$("#topContacts").append(formatedXing);
-	$("#topContacts").append(formatedGithub);
-	$("#topContacts").append(formatedblog);
+	$("#SecContacts").append(formatedLinkedin);
+	$("#SecContacts").append(formatedXing);
+	$("#SecContacts").append(formatedGithub);
+	$("#SecContacts").append(formatedblog);
 
 	// Add Skills
 
 	if(bio.skills.length >0) {
-		$("#header").append(HTMLskillsStart);
+		$("#header-text").append(HTMLskillsStart);
 
 		for (skill in bio.skills) {
 			var formatedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
@@ -168,7 +168,7 @@ bio.display = function() {
 	//add Biopic
 
 	var formatedbioPic = HTMLbioPic.replace(/%data%/g, bio.bioPic);
-	$("#header").prepend(formatedbioPic);
+	$("#header-picture").append(formatedbioPic);
 };
 	//Add Work section
 

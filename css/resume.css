@@ -1,0 +1,19 @@
+ul {
+	list-style-type: none;
+}
+
+hr {
+	color: black;
+}
+
+.header-highlight {
+	background-color: #f3f3f3;
+}
+
+
+/* Bootstrap breaking point small - medium  */
+@media screen and (max-width: 992px) {
+	.logo-display {
+		display: none;
+	}
+}
