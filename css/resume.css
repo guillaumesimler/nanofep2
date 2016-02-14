@@ -1,3 +1,9 @@
+/* The aim of this seperate css file is to
+		- allow the use of my blogs layout skim)
+		- override the changes I need
+  */
+
+
 ul {
 	list-style-type: none;
 }
@@ -6,11 +12,55 @@ hr {
 	color: black;
 }
 
+a {
+  color: #92bb4e;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Additional css */
+
 .header-highlight {
-	background-color: #f3f3f3;
+	background-color: #9c9797;
+}
+
+.date-text {
+	font-style: italic;
+	color: #999;
+	line-height: 16px;
+	float: left;
+} 
+
+.location-text {
+	font-style: italic;
+	color: #999;
+	line-height: 16px;
+	float: right;
+}
+
+.gray {
+  background-color: #f3f3f3;
+   clear:both;
 }
 
 
+#skills-h3,
+#resume-h3 {
+	color: #868383;
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+  
 /* Bootstrap breaking point small - medium  */
 @media screen and (max-width: 992px) {
 	.logo-display {
