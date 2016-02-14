@@ -22,7 +22,7 @@ var HTMLgithub = '<li class="flex-item"><a class="orange-text" href=%data%>Githu
 var HTMLblog = '<li class="flex-item"><a class="orange-text" href=%data%>Blog</a></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="images/%data%" class="biopic">';
+var HTMLbioPic = '<picture><source media="(min-width:600px)" srcset="images/%data%-300_1x.jpg 1x, images/%data%-300_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/%data%-150_1x.jpg 1x, images/%data%-150_2x.jpg 2x"> <img src="images/%data%"-150_1x.jpg class="biopic"></picture>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
@@ -39,7 +39,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="images/%data%">';
+var HTMLprojectImage = '<picture><source media="(min-width:600px)" srcset="images/%data%-300_1x.jpg 1x, images/%data%-300_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/%data%-150_1x.jpg 1x, images/%data%-150_2x.jpg 2x"> <img src="images/%data%"-150_1x.jpg></picture>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';

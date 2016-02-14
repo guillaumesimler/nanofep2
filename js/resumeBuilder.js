@@ -11,7 +11,7 @@ var bio={"name": "Guillaume Simler",
 		"Xing": "https://www.xing.com/profile/Guillaume_Simler",
 		"Github":"https://github.com/guillaumesimler",
 		"blog":"http://www.simler.eu"},
-	"bioPic": "bio_pic-2-150_1x.jpg",
+	"bioPic": "bio_pic-2",
 	"location": "Nürtingen, Germany"
 };
 
@@ -20,14 +20,14 @@ var projects={
 		{"title": "About Me",
 		"dates": "01/2016",
 		"description": "a first intro in HTML and CSS",
-		"pic": ["project1-1-150_1x.jpg",
-			"project1-2-150_1x.jpg"]
+		"pic": ["project1-1",
+			"project1-2"]
 		},
 
 		{"title": "Portfolio",
 		"dates": "02/2016",
 		"description": "a deep dive into responsive webdesign",
-		"pic": ["project2-1-150_1x.jpg"]
+		"pic": ["project2-1"]
 		}		
 	]
 };
@@ -167,7 +167,7 @@ bio.display = function() {
 
 	//add Biopic
 
-	var formatedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	var formatedbioPic = HTMLbioPic.replace(/%data%/g, bio.bioPic);
 	$("#header").prepend(formatedbioPic);
 };
 	//Add Work section
@@ -232,7 +232,7 @@ projects.display = function() {
 		if (projects.project[proj].pic.length > 0){
 
 			for (image in projects.project[proj].pic){
-				var formatedprojectImage = HTMLprojectImage.replace("%data%", projects.project[proj].pic[image]);
+				var formatedprojectImage = HTMLprojectImage.replace(/%data%/g, projects.project[proj].pic[image]);
 				$(".project-entry:last").append(formatedprojectImage);
 			};
 		};
