@@ -2,8 +2,6 @@
 		- allow the use of my blogs layout skim)
 		- override the changes I need
   */
-
-
 ul {
 	list-style-type: none;
 }
@@ -13,10 +11,10 @@ hr {
 }
 
 a {
-  color: #92bb4e;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
+	color: #92bb4e;
+	text-decoration: none;
+	margin-top: 10px;
+	display: block;
 }
 
 /* Additional css */
@@ -40,8 +38,8 @@ a {
 }
 
 .gray {
-  background-color: #f3f3f3;
-   clear:both;
+	background-color: #f3f3f3;
+	clear:both;
 }
 
 
@@ -55,15 +53,20 @@ a {
 }
 
 #map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
+	display: block;
+	height: 100%;
+	margin: 0 5%;
 }
 
 #mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+	height: 400px;
+	width: 100%;
+	padding-bottom: 5%;
+}
+
+.white-text {
+	color: #fff;
+}
 
 /* Bootstrap breaking point small - medium  */
 @media screen and (max-width: 992px) {

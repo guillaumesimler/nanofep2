@@ -71,7 +71,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         -->
 
         <header class="row header-highlight">
-            <div  id="header-picture" id="picture" class="col-xs-3 col-md-2 logo">
+            <div id="header-picture" class="col-xs-3 col-md-2 logo">
             </div>
 
             <div class="col-xs-9 col-md-8">
@@ -91,19 +91,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         </header>
         
         <article class="row">
-            <div id="workExperience" class="gray">
+            <div id="workExperience" class="gray col-xs-12">
                 <h2>Work Experience</h2>
             </div>
         </article>
 
         <article class="row">
-            <div id="projects">
+            <div id="projects" class="col-xs-12">
                 <h2>Projects</h2>
             </div>
         </article>
         
         <article class="row">
-            <div id="education" class="gray">
+            <div id="education" class="gray col-xs-12">
                 <h2>Education</h2>
             </div>
         </article>
@@ -172,9 +172,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     }
     if(document.getElementsByClassName('education-entry').length === 0) {
         document.getElementById('education').style.display = 'none';
-    }
-    if(document.getElementsByClassName('flex-item').length === 0) {
-        document.getElementById('lets-connect').style.display = 'none';
     }
     if(document.getElementById('map') === null) {
         document.getElementById('mapDiv').style.display = 'none';

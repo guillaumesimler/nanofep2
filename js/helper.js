@@ -13,16 +13,16 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span class="white-text">%data%</span><hr>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item col-xs-6"><span class=" orange-text">mobile :</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item col-xs-6"><span class="orange-text">email :</span><span class="white-text">%data%</span></li>';
-var HTMLLinkedIn = '<li class="flex-item col-xs-2"><a class="orange-text" href=%data%>LinkedIn</a></li>';
-var HTMLXing = '<li class="flex-item col-xs-2"><a class="orange-text" href=%data%>Xing</a></li>';
-var HTMLgithub = '<li class="flex-item col-xs-2"><a class="orange-text" href=%data%>Github</a></li>';
-var HTMLblog = '<li class="flex-item col-xs-2"><a class="orange-text" href=%data%>Blog</a></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li>%contact%<span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="col-xs-6">mobile :<span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="col-xs-6">email :<span class="white-text">%data%</span></li>';
+var HTMLLinkedIn = '<li class="col-xs-2"><a href=%data%>LinkedIn</a></li>';
+var HTMLXing = '<li class="col-xs-2"><a href=%data%>Xing</a></li>';
+var HTMLgithub = '<li class="col-xs-2"><a href=%data%>Github</a></li>';
+var HTMLblog = '<li class="col-xs-2"><a href=%data%>Blog</a></li>';
+var HTMLlocation = '<li>location<span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<picture class="img-responsive"><source media="(min-width:600px)" srcset="images/%data%-300_1x.jpg 1x, images/%data%-300_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/%data%-150_1x.jpg 1x, images/%data%-150_2x.jpg 2x"> <img src="images/%data%"-150_1x.jpg class="biopic"></picture>';
+var HTMLbioPic = '<picture class="img-responsive"><source media="(min-width:600px)" srcset="images/resume-images/%data%-300_1x.jpg 1x, images/resume-images/%data%-300_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/resume-images/%data%-150_1x.jpg 1x, images/resume-images/%data%-150_2x.jpg 2x"> <img src="images/images/%data%"-150_1x.jpg class="biopic"></picture>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3> <span id="skills"><span>';
@@ -35,11 +35,11 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
+var HTMLprojectStart = '<div class="project-entry row"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<picture class="img-responsive"><source media="(min-width:600px)" srcset="images/%data%-300_1x.jpg 1x, images/%data%-300_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/%data%-150_1x.jpg 1x, images/%data%-150_2x.jpg 2x"> <img src="images/%data%"-150_1x.jpg></picture>';
+var HTMLprojectImage = '<picture class="img-responsive col-xs-6 col-md-4"><source media="(min-width:600px)" srcset="images/resume-images/%data%-150_1x.jpg 1x, images/resume-images/%data%-150_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/resume-images/%data%-75_1x.jpg 1x, images/resume-images/%data%-75_2x.jpg 2x"> <img src="images/resume-images/%data%"-75_1x.jpg></picture>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';

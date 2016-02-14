@@ -20,14 +20,21 @@ var projects={
 		{"title": "About Me",
 		"dates": "01/2016",
 		"description": "a first intro in HTML and CSS",
-		"pic": ["project1-1",
-			"project1-2"]
+		"pic": ["project1-1"]
 		},
 
 		{"title": "Portfolio",
 		"dates": "02/2016",
 		"description": "a deep dive into responsive webdesign",
-		"pic": ["project2-1"]
+		"pic": ["project2-1",
+			"project2-2",
+			"project2-3"]
+		},
+
+		{"title": "Resume",
+		"dates": "02/2016",
+		"description": "a deep dive into responsive webdesign",
+		"pic": ["project3-1"]
 		}		
 	]
 };
