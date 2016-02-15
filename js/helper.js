@@ -42,7 +42,7 @@ var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<picture class="col-xs-4"><source media="(min-width:600px)" srcset="images/resume-images/%data%-150_1x.jpg 1x, images/resume-images/%data%-150_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/resume-images/%data%-75_1x.jpg 1x, images/resume-images/%data%-75_2x.jpg 2x"><img src="images/resume-images/%data%-75_1x.jpg" alt="picture(s) from project" class="img-responsive"></picture>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolName = '<a href="#" target="_blank">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
@@ -90,8 +90,7 @@ $(document).click(function(loc) {
 
 
 /*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
+This is the fun part. Here's where we generate the custom Google Map for the websiteSee the documentation below for more details.
 https://developers.google.com/maps/documentation/javascript/reference
 */
 var map;    // declares a global map variable
@@ -125,7 +124,7 @@ function initializeMap() {
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(bio.location);
+    locations.push(bio.contacts.location);
 
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
@@ -178,6 +177,7 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+      infoWindow.open(map,marker);
     });
 
     // this is where the pin actually gets added to the map.
