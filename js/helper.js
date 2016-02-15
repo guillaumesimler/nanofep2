@@ -22,7 +22,7 @@ var HTMLgithub = '<li class="col-xs-2"><a href=%data% target="_blank">Github</a>
 var HTMLblog = '<li class="col-xs-2"><a href=%data% target="_blank">Blog</a></li>';
 var HTMLlocation = '<li>location<span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<picture><source media="(min-width:600px)" srcset="images/resume-images/%data%-300_1x.jpg 1x, images/resume-images/%data%-300_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/resume-images/%data%-150_1x.jpg 1x, images/resume-images/%data%-150_2x.jpg 2x"><img src="images/images/%data%-150_1x.jpg" alt="biographical picture" class="img-responsive"></picture>';
+var HTMLbioPic = '<picture id="biopic"><source media="(min-width:600px)" srcset="images/resume-images/%data%-300_1x.jpg 1x, images/resume-images/%data%-300_2x.jpg 2x"><source media="(max-width:600px)" srcset="images/resume-images/%data%-150_1x.jpg 1x, images/resume-images/%data%-150_2x.jpg 2x"><img src="images/images/%data%-150_1x.jpg" alt="biographical picture" class="img-responsive"></picture>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3> <span id="skills"><span>';

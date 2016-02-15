@@ -22,7 +22,9 @@ var bio = {
     changing part of the Url.
     the other alternative would have been to use 4 different urls. 
     This explains the changes in helper.js from "%data%" to /%data%/g */
-    "biopic": "bio_pic-2"
+    "biopic": "bio_pic-2",
+    //a small addition for some JQuerry interactivity
+    "hydepic": "bio_pic-1"
 };
 
 var projects = {
@@ -215,15 +217,30 @@ bio.display = function() {
     var formatedbioPic = HTMLbioPic.replace(/%data%/g, bio.biopic);
     $("#header-picture").append(formatedbioPic);
 };
+
+	// Some interactivtiy to change from Dr Jekill to Mr Hyde
+
+$(document).ready(function(){
+	$('#header-picture').hover(function() {
+		$("#biopic").remove();
+		var formatedbioPic = HTMLbioPic.replace(/%data%/g, bio.hydepic);
+		$("#header-picture").append(formatedbioPic);
+	},function(){
+		$("#biopic").remove();
+    	var formatedbioPic = HTMLbioPic.replace(/%data%/g, bio.biopic);
+    	$("#header-picture").append(formatedbioPic);		
+	});
+});
+
 //Add Work section
 
 // "Subfunction"
-work.Location = function() {
+work.Location = function(_input) {
     var data = "%data%";
     var InputLocation = "";
 
-    for (var place in work.jobs[job].location) {
-        InputLocation = InputLocation + work.jobs[job].location[place] + " - ";
+    for (var place in _input.location) {
+        InputLocation = InputLocation + _input.location[place] + " - ";
     };
 
     InputLocation = InputLocation.slice(0, -3);
@@ -256,7 +273,7 @@ work.display = function() {
 
             //Location is more fun: a second loop is needed in my case
 
-            work.Location();
+            work.Location(work.jobs[job ]);
 
             //Description
             var formatedworkDescription = HTMLworkDescription.replace(data, work.jobs[job].description);
@@ -270,7 +287,7 @@ projects.display = function() {
 
     var data = "%data%";
 
-    for (proj in projects.projects) {
+    for (var proj in projects.projects) {
         $("#projects").append(HTMLprojectStart);
 
         var formatedprojectTitle = HTMLprojectTitle.replace(data, projects.projects[proj].title);
@@ -283,7 +300,7 @@ projects.display = function() {
 
         if (projects.projects[proj].images.length > 0) {
 
-            for (image in projects.projects[proj].images) {
+            for (var image in projects.projects[proj].images) {
                 var formatedprojectImage = HTMLprojectImage.replace(/%data%/g, projects.projects[proj].images[image]);
                 $(".project-entry:last").append(formatedprojectImage);
             };
