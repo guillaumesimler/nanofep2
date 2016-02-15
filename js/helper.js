@@ -138,11 +138,12 @@ function initializeMap() {
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide: 
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    for (job in work.jobs) {
-      for (place in work.jobs[job].location) {
-        locations.push(work.jobs[job].location[place]);
-      };
-    };
+
+    work.jobs.forEach(function(job){
+      job.location.forEach(function(place){
+        locations.push(place);
+      });
+    });
 
     return locations;
   }
@@ -194,9 +195,11 @@ function initializeMap() {
   callback(results, status) makes sure the search returned results for a location.
   If so, it creates a new map marker for that location.
   */
+  
+
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      createMapMarker(results[0]);
+      createMapMarker(results[0]); 
     }
   }
 
@@ -211,6 +214,7 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
+
       locations.forEach(function(place){
       // the search request object
       var request = {
@@ -218,7 +222,7 @@ function initializeMap() {
       };
 
       // Actually searches the Google Maps API for location data and runs the callback
-      // function with the search results after each search.
+      // function with the search results after each search,.
       service.textSearch(request, callback);
     });
   }
