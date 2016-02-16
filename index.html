@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 
-<!--
-This is an HTML document. It contains information about how elements in the website
-are arranged. In other words, it describes the layout of a website.
+<!-- This is my development productive site, adapted from Cameron's Udacity course -->
 
-I can't wait to see the resumes you put together!
-
-Cameron Pittman, Udacity Course Developer
--->
-
-<!--
-The <head> of a website generally links to important resources the page will
-need to load. You'll see a lot of <link>s to CSS files for styles and
-<scripts> for JavaScript files to build interactions.
--->
 <head>
     <!-- This tells the browser how to read the document. -->
     <meta charset="utf-8">
@@ -26,30 +14,17 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     <link rel="stylesheet" type="text/css" href="css/resume.css">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet" type="text/css">
 
-    <!--
-        jQuery is a common JavaScript library for reading and making changes to the
-        Document Object Model (DOM). The DOM is a tree that contains information
-        about what is actually visible on a website.
-
-        While HTML is a static document, the browser converts HTML to the
-        DOM and the DOM can change. In fact, JavaScript's power comes from
-        its ability to manipulate the DOM, which is essentially a JavaScript
-        object. When JavaScript makes something interesting happen on a
-        website, it's likely the action happened because JavaScript changed
-        the DOM. jQuery is fast and easy to use, but it doesn't do anything
-        you can't accomplish with vanilla (regular) JavaScript.
-    -->
-    <script src="js/jQuery.js"></script>
+    <!-- Replaced the local jQuery.js with the webversion -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
     <!-- More on helper.js in the class -->
-    <script src="js/helper.js"></script>
+    <script src="js/resumeHelper.js"></script>
 
     <!-- Load Google Maps API  -->
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
     <!--Add <picture> for Safari -->
     <script type="text/javascript">document.createElement("picture"); </script>
-
     <script type="text/javascript" src="js/picturefill.min.js" async></script>
 
     <!--add bootstrap -->
