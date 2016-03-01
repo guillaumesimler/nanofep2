@@ -200,13 +200,14 @@ function initializeMap() {
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       createMapMarker(results[0]); 
-    }
+    } 
   }
 
   /*
   pinPoster(locations) takes in the array of locations created by locationFinder()
   and fires off Google place searches for each location
   */
+
   function pinPoster(locations) {
 
     // creates a Google place search service object. PlacesService does the work of
@@ -217,14 +218,17 @@ function initializeMap() {
 
       locations.forEach(function(place){
       // the search request object
-      var request = {
-        query: place
-      };
+      var myInterval = window.setInterval(function(){
+            var request = {
+            query: place
+          };
 
-      // Actually searches the Google Maps API for location data and runs the callback
-      // function with the search results after each search,.
-      service.textSearch(request, callback);
-    });
+          // Actually searches the Google Maps API for location data and runs the callback
+          // function with the search results after each search,.
+          service.textSearch(request, callback);
+        },110);
+      });
+
   }
 
   // Sets the boundaries of the map based on pin locations
